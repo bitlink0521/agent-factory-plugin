@@ -1,0 +1,31 @@
+{
+  "name": "agent-factory",
+  "version": "1.0.0",
+  "description": "连接智能体工场：MCP 项目/任务工具，账密代签 PAT，禁止手填令牌。",
+  "author": {
+    "name": "Bitilinks"
+  },
+  "homepage": "https://agent.bitilinks.cn",
+  "keywords": [
+    "agent-factory",
+    "mcp",
+    "projects",
+    "tasks",
+    "智能体工场"
+  ],
+  "logo": "assets/logo.svg",
+  "license": "MIT",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "AF_CONNECTOR_TOKEN": {
+        "type": "string",
+        "title": "智能体工场 PAT",
+        "description": "Bearer afpat_…（由 bot 代登录签发后填入；勿手抄到聊天）"
+      }
+    },
+    "required": [
+      "AF_CONNECTOR_TOKEN"
+    ]
+  }
+}

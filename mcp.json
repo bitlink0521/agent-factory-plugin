@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "智能体工场": {
+      "url": "https://agent.bitilinks.cn/api/connector/mcp",
+      "headers": {
+        "Authorization": "Bearer ${AF_CONNECTOR_TOKEN}"
+      }
+    }
+  }
+}
