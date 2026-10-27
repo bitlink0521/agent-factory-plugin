@@ -1,43 +1,25 @@
 # 智能体工场（Cursor Plugin）
 
-本插件 = Skill + MCP + Logo，连接 [https://agent.bitilinks.cn](https://agent.bitilinks.cn)（项目 / 任务）。
+Skill + MCP + Logo，连 [agent.bitilinks.cn](https://agent.bitilinks.cn)（项目 / 任务）。
 
-官方 Marketplace 可能尚未过审。同事请走下面的快捷安装，不要手填 MCP 地址，也不要把 `afpat_…` 贴进聊天。
-
-## 同事快捷安装
-
-### 复制这段发给 bot
-
-把下面整段复制，发给自己的 Cursor / Grok Bot。bot 会自己装插件、收账密、代签并做冒烟。
+## 复制这段发给 bot
 
 ```text
 安装并连上智能体工场，做完再回报。
 
-1. 从本公开仓安装插件。优先团队市场 Import from Repo：https://github.com/bitlink0521/agent-factory-plugin
-   若无团队市场：把仓库拷到 ~/.cursor/plugins/local/agent-factory，然后 Reload Window。
-2. 装好后按插件 skill：弹表单收工场账密 → 代登录签发 PAT → 写入连接器/插件变量 AF_CONNECTOR_TOKEN。
-3. 禁止让我手抄或粘贴 afpat_… 到聊天。
-4. 冒烟：list_projects / list_tasks 通即可回报。不要让我手填 MCP URL。
+1. 优先团队市场 Import from Repo：https://github.com/bitlink0521/agent-factory-plugin
+   若无：拷到 ~/.cursor/plugins/local/agent-factory，Reload Window。
+2. 按 skill 弹表单收账密 → 代签 afpat_ → 写入 AF_CONNECTOR_TOKEN。
+3. 禁止手抄/粘贴 afpat_…。
+4. list_projects / list_tasks 通即可；不要手填 MCP URL。
 ```
 
-### 人工备用路径
+## 人工备用
 
-- **团队市场**：Dashboard → Plugins & MCPs → Import from Repo，填 `https://github.com/bitlink0521/agent-factory-plugin`。
-- **本机**：把本仓拷到 `~/.cursor/plugins/local/agent-factory`，在 Cursor 里 Reload Window。
-
-拷好后仍把上面的提示词发给 bot，由它收账密、代签并写入 `AF_CONNECTOR_TOKEN`。
-
-### 官方 Marketplace
-
-过审前，聊天里用 `/add-plugin` 粘贴本仓 GitHub URL 通常装不上。过审后改为 Marketplace 一键安装；在此之前用上面的 bot 安装或人工备用路径。
+- 团队市场 Import from Repo：同上 URL
+- 或拷到 `~/.cursor/plugins/local/agent-factory` 后 Reload
 
 ## 包含
 
-- **Logo**：`assets/logo.svg`（品牌三叶标）
-- **Skill**：`skills/agent-factory`（连工场、列项目、建任务；含代签 PAT）
-- **MCP**：`mcp.json` 已指向 `https://agent.bitilinks.cn/api/connector/mcp`（随插件生效，不必手填 URL）
-- **变量**：`AF_CONNECTOR_TOKEN`（Bearer `afpat_…`，由 bot 写入插件变量；勿贴到聊天）
-
-## 鉴权约定
-
-禁止用户手抄 PAT 到聊天。优先账密登录 → `POST /api/connector/tokens` 签发 → 写入连接器 / 插件变量。只认 Bearer PAT，不读 cookie。令牌绑签发时的工作空间。
+- Skill `skills/agent-factory` · MCP · `assets/logo.svg`
+- 变量 `AF_CONNECTOR_TOKEN`（Bearer `afpat_…`）
